@@ -37,10 +37,28 @@
                   </tr>
 
                   <tr align="right">
-                    <th>Brand:</th>
+                    <th>Rating:</th>
                     <td>
                       <v-rating :length="5" :size="32" :model-value="item.raw.rating" active-color="primary" readonly
                         half-increments />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td colspan="2">
+                      <v-carousel style="margin: 0 auto;" cycle height="400" hide-delimiter-background
+                        show-arrows="hover">
+                        <v-carousel-item v-for="(img, i) in item.raw.images" :key="i" :src="img" cover></v-carousel-item>
+                      </v-carousel>
+                    </td>
+                  </tr>
+
+                  <tr align="right">
+                    <th>Category:</th>
+                    <td>
+                      <v-chip @click="() => { }">
+                        {{ item.raw.category }}
+                      </v-chip>
                     </td>
                   </tr>
 
@@ -65,6 +83,12 @@
     </v-data-iterator>
   </v-container>
 </template>
+
+<style>
+.v-table__wrapper {
+  overflow-x: hidden;
+}
+</style>
 
 <script>
 import { products } from '../logic/apiData.js';
