@@ -8,26 +8,30 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/signup',
+    name: 'signup',
+    component: () => import(/* webpackChunkName: "category" */ '../views/SignupView.vue')
+  },
+  {
     path: '/users',
     name: 'users',
-    component: () => import(/* webpackChunkName: "about" */ '../views/UsersView.vue')
+    component: () => import(/* webpackChunkName: "users" */ '../views/UsersView.vue')
   },
   {
     path: '/user/:id',
     name: 'user',
-    component: () => import(/* webpackChunkName: "about" */ '../views/UserView.vue')
+    component: () => import(/* webpackChunkName: "user" */ '../views/UserView.vue')
   },
   {
     path: '/products',
     name: 'products',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ProductsView.vue')
+    component: () => import(/* webpackChunkName: "products" */ '../views/ProductsView.vue')
   },
   {
     path: '/category/:category',
     name: 'category',
-    component: () => import(/* webpackChunkName: "about" */ '../views/CategoryView.vue')
+    component: () => import(/* webpackChunkName: "category" */ '../views/CategoryView.vue')
   }
-
 ]
 
 const router = createRouter({
