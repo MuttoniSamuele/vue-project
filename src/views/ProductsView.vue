@@ -12,7 +12,7 @@ import { products } from '../logic/apiData.js';
 export default {
   data() {
     return {
-      productsList: products,
+      productsList: products
     }
   }
 }

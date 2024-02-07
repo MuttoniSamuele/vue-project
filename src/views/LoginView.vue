@@ -46,6 +46,7 @@ export default {
     login() {
       const user = users.find((u) => u.email === this.email && u.password === this.password);
       if (user !== undefined) {
+        localStorage.setItem("userId", user.id);
         router.push("/products");
       } else {
         this.wrongLogin = true;
